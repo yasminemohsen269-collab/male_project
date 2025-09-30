@@ -5,7 +5,7 @@ import 'package:male_project/utils/app_color.dart';
 
 class AppTextStyle {
   static TextStyle onBourdingTileStyle = GoogleFonts.inter(
-    fontSize: 32.sp,
+    fontSize: 24.sp,
     fontWeight: FontWeight.w700,
     color: AppColor.secondaryColor,
   );

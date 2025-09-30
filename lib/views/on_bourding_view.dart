@@ -18,12 +18,12 @@ class OnBourdingView extends StatefulWidget {
 
 class _OnBourdingViewState extends State<OnBourdingView> {
   List<String> tiles = [
-    "Save Your Meals Ingredient",
+    "Save Your Ingredients",
     "Use Our App The Best Choice",
     " Our App Your Ultimate Choice",
   ];
   List<String> descriptions = [
-    "Add Your Meals and its Ingredients and we will save it for you",
+    "Add Your Ingredients and we will save it for you",
     "the best choice for your kitchen do not hesitate",
     "All the best restaurants and their top menus are ready for you",
   ];
@@ -107,10 +107,10 @@ class _OnBourdingViewState extends State<OnBourdingView> {
                       color: Colors.grey,
                       activeColor: AppColor.secondaryColor,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
+                        borderRadius: BorderRadius.circular(5.0.r),
                       ),
                       activeShape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
+                        borderRadius: BorderRadius.circular(5.0.r),
                       ),
                     ),
                     onTap: (index) {
