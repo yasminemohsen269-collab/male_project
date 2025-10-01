@@ -11,6 +11,7 @@ class CustomTextField extends StatelessWidget {
     this.isPassword,
     this.controller,
     this.validator,
+    this.maxLines,
   });
   final String? hintText;
   final Widget? suffixIcon;
@@ -18,6 +19,8 @@ class CustomTextField extends StatelessWidget {
   final bool? isPassword;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+  final int? maxLines;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -25,8 +28,10 @@ class CustomTextField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         validator: validator,
+        maxLines: maxLines ?? 1,
         obscureText: isPassword ?? false,
         autofocus: false,
+
         cursorColor: AppColor.praimaryColor,
         decoration: InputDecoration(
           hintText: hintText ?? "",
@@ -56,7 +61,7 @@ class CustomTextField extends StatelessWidget {
             borderSide: const BorderSide(color: Colors.red, width: 1),
           ),
           filled: true,
-          fillColor: Color(0xffF7F8F9),
+          fillColor: Colors.white,
           suffixIcon: suffixIcon,
         ),
       ),

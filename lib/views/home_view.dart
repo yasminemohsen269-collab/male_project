@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:male_project/helper/db_helper.dart';
-import 'package:male_project/utils/app_assets.dart';
+import 'package:male_project/routing/app_routes.dart';
 import 'package:male_project/utils/app_color.dart';
 import 'package:male_project/utils/app_text_style.dart';
 import 'package:male_project/widgets/custom_food_item.dart';
@@ -17,15 +18,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    dbHelper.insertMeal(
-      Meal(
-        imageUrl: AppAssets.foodItemImage,
-        title: "title",
-        description: "description",
-        time: "10-50",
-        rate: 3.2,
-      ),
-    );
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -97,7 +89,9 @@ class HomeView extends StatelessWidget {
           shape: const CircleBorder(),
 
           child: Icon(Icons.add, color: Colors.white, size: 24.sp),
-          onPressed: () {},
+          onPressed: () {
+            GoRouter.of(context).push(AppRoutes.addMealView);
+          },
         ),
       ),
     );

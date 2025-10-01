@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:male_project/utils/app_color.dart';
@@ -44,11 +45,13 @@ class CustomFoodItem extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12.r),
-              child: Image.asset(
-                imageUrl,
+              child: CachedNetworkImage(
+                imageUrl: imageUrl,
                 height: 145.h,
                 width: double.infinity,
                 fit: BoxFit.cover,
+                errorWidget: (context, url, error) =>
+                    Icon(Icons.error, color: Colors.red),
               ),
             ),
             HightSpace(height: 8.h),
@@ -60,7 +63,7 @@ class CustomFoodItem extends StatelessWidget {
                 style: AppTextStyle.black16MediumStyle,
               ),
             ),
-            HightSpace(height: 18.h),
+            HightSpace(height: 10.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

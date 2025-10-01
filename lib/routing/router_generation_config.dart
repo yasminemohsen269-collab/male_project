@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:male_project/routing/app_routes.dart';
+import 'package:male_project/views/add_meal_view.dart';
 import 'package:male_project/views/home_view.dart';
 import 'package:male_project/views/on_bourding_view.dart';
 
@@ -14,6 +15,10 @@ class RouterGenerationConfig {
       GoRoute(
         path: AppRoutes.homeView,
         builder: (context, state) => const HomeView(),
+      ),
+      GoRoute(
+        path: AppRoutes.addMealView,
+        builder: (context, state) => const AddMealView(),
       ),
     ],
   );

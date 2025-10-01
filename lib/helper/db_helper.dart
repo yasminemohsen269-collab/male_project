@@ -19,7 +19,7 @@ class DatabaseHelper {
     String path = join(await getDatabasesPath(), "meals.db");
     return await openDatabase(
       path,
-      version: 3,
+      version: 2,
       onCreate: _createDatabase,
       onUpgrade: _upgradeDatabase,
     );
@@ -67,5 +67,10 @@ class DatabaseHelper {
       await db.execute("DROP TABLE IF EXISTS meals");
       await _createDatabase(db, newVersion);
     }
+  }
+
+  Future<void> clearMeals() async {
+    final db = await database;
+    await db.delete("meals"); // يمسح كل الصفوف
   }
 }
