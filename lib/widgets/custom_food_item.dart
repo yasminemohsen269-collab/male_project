@@ -29,16 +29,38 @@ class CustomFoodItem extends StatelessWidget {
         width: 153.w,
 
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: const Color.fromARGB(255, 246, 237, 237),
           borderRadius: BorderRadius.circular(12.r),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 6,
+              offset: Offset(0, 3),
+            ),
+          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(imageUrl, height: 106.h, width: 137.w),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12.r),
+              child: Image.asset(
+                imageUrl,
+                height: 145.h,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+            ),
             HightSpace(height: 8.h),
-            SizedBox(width: 120.w, child: Text(title, maxLines: 1)),
-            HightSpace(height: 6.h),
+            SizedBox(
+              width: 120.w,
+              child: Text(
+                title,
+                maxLines: 1,
+                style: AppTextStyle.black16MediumStyle,
+              ),
+            ),
+            HightSpace(height: 18.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -70,6 +92,7 @@ class CustomFoodItem extends StatelessWidget {
                       time,
                       style: AppTextStyle.black16MediumStyle.copyWith(
                         fontSize: 12.sp,
+                        color: const Color.fromARGB(255, 155, 154, 154),
                       ),
                     ),
                   ],
