@@ -45,10 +45,10 @@ class _OnBourdingViewState extends State<OnBourdingView> {
             ),
           ),
           Positioned(
-            top: 320.h,
+            top: 333.h,
             bottom: 30.h,
-            right: 32.w,
-            left: 32.w,
+            right: 34.w,
+            left: 34.w,
             child: Container(
               padding: EdgeInsets.all(32.sp),
               decoration: BoxDecoration(
@@ -82,7 +82,7 @@ class _OnBourdingViewState extends State<OnBourdingView> {
                                     textAlign: TextAlign.center,
                                     style: AppTextStyle.onBourdingTileStyle,
                                   ),
-                                  HightSpace(height: 16.h),
+                                  const HightSpace(height: 16),
                                   Text(
                                     descriptions[index],
                                     textAlign: TextAlign.center,
@@ -97,7 +97,7 @@ class _OnBourdingViewState extends State<OnBourdingView> {
                       }),
                     ),
                   ),
-                  HightSpace(height: 20.h),
+                  const HightSpace(height: 18),
                   DotsIndicator(
                     dotsCount: tiles.length,
                     position: currentIndexPage.toDouble(),
@@ -119,7 +119,7 @@ class _OnBourdingViewState extends State<OnBourdingView> {
                       setState(() {});
                     },
                   ),
-                  HightSpace(height: 24.h),
+                  const HightSpace(height: 24),
                   currentIndexPage >= 2
                       ? InkWell(
                           onTap: () {
