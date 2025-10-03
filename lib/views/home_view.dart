@@ -67,7 +67,12 @@ class HomeView extends StatelessWidget {
                                   title: meal.title,
                                   rate: meal.rate,
                                   time: meal.time,
-                                  onTap: () {},
+                                  onTap: () {
+                                    GoRouter.of(context).push(
+                                      AppRoutes.mealDetailsView,
+                                      extra: meal,
+                                    );
+                                  },
                                 );
                               },
                             );
